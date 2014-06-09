@@ -1,0 +1,46 @@
+{
+  "name": "node-slab",
+  "version": "0.0.1",
+  "author": {
+    "name": "Trevor Baron",
+    "url": "http://trevordev.com"
+  },
+  "description": "easy method of creating smart phone controlled apps",
+  "keywords": [
+    "mobile",
+    "controller",
+    "glass",
+    "slab",
+    "remote",
+    "smart appliance"
+  ],
+  "files": [
+    "lib",
+    "test",
+    "examples",
+    "README.md"
+  ],
+  "main": "lib/slab.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TrevorDev/node-slab"
+  },
+  "dependencies":
+  { 
+      "save-to": "x.x"
+    , "co": "x.x"
+    , "co-fs": "x.x"
+    , "co-busboy": "x.x"
+    , "koa-send": "x.x"
+    , "koa-static": "x.x"
+    , "koa-router": "x.x"
+    , "co-body": "x.x"
+    , "koa": "x.x"
+    , "koa-cors": "x.x"
+    , "ip": "x.x"
+  },
+  "engines": {
+    "node": ">=0.11.9"
+  },
+  "readmeFilename": "README.md"
+}
