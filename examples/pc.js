@@ -9,7 +9,8 @@ var handleVol = function *(e){
 }
 
 var handleButton = function *(e){
-	exec("shut", function (error, stdout, stderr) {});
+	//exec("shut", function (error, stdout, stderr) {});
+	exec("mpg321 developer.mp3", function (error, stdout, stderr) {});
 }
 
 handlers.push(slab.createHandler("volume", slab.CONTROL_TYPE.RANGE, handleVol))
