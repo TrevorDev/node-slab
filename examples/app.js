@@ -4,11 +4,11 @@ var exec = require('child_process').exec;
 
 var handlers = []
 
-var handleVol = function *(e){
+var handleVol = function (e){
 	exec("amixer -D pulse sset Master "+e.val+"%", function (error, stdout, stderr) {});
 }
 
-var handleButton = function *(e){
+var handleButton = function (e){
 	//exec("shut", function (error, stdout, stderr) {});
 	exec("mpg321 developer.mp3", function (error, stdout, stderr) {});
 }

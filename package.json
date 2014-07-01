@@ -37,6 +37,7 @@
     , "co-body": "x.x"
     , "koa": "x.x"
     , "koa-cors": "x.x"
+    , "socket.io": "x.x"
     , "ip": "x.x"
   },
   "engines": {
