@@ -22,9 +22,13 @@ var handleForm = function (e){
 }
 
 var handleTouch = function (e){
-	var command = "xdotool mousemove_relative -- "+e.val.x+" "+e.val.y;
-	console.log(command);
-	exec(command, function (error, stdout, stderr) {});
+	if (e.val.type == "touchstart"){
+		console.log("start!!!!!!!!!!!!!!!!");
+	}else{
+		var command = "xdotool mousemove_relative -- "+e.val.x+" "+e.val.y;
+		console.log(command);
+		exec(command, function (error, stdout, stderr) {});
+	}
 }
 
 handlers.push(slab.createHandler("volume", slab.CONTROL_TYPE.RANGE, handleVol))
