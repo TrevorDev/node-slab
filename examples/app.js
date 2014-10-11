@@ -31,11 +31,20 @@ var handleTouch = function (e){
 	}
 }
 
+var handleCompass = function (e){
+	//console.log(e)
+}
+
+var handleGyro = function (e){
+	console.log(e)
+}
+
 handlers.push(slab.createHandler("volume", slab.CONTROL_TYPE.RANGE, handleVol))
 handlers.push(slab.createHandler("playSound", slab.CONTROL_TYPE.BUTTON, handleButton))
 handlers.push(slab.createHandler("outputForm", slab.CONTROL_TYPE.FORM, handleForm))
 handlers.push(slab.createHandler("touchScreen", slab.CONTROL_TYPE.TOUCH, handleTouch))
-
+handlers.push(slab.createHandler("compassTest", slab.CONTROL_TYPE.COMPASS, handleCompass))
+handlers.push(slab.createHandler("gyroTest", slab.CONTROL_TYPE.GRYO, handleGyro))
 
 
 var server = slab.startServer(handlers, fs.readFileSync('ui.html').toString(), {port: 3000})
