@@ -36,7 +36,7 @@ var handleCompass = function (e){
 }
 
 var handleGyro = function (e){
-	console.log(e)
+	console.log(Math.floor(e.val.alpha/20))
 }
 
 handlers.push(slab.createHandler("volume", slab.CONTROL_TYPE.RANGE, handleVol))
@@ -47,6 +47,6 @@ handlers.push(slab.createHandler("compassTest", slab.CONTROL_TYPE.COMPASS, handl
 handlers.push(slab.createHandler("gyroTest", slab.CONTROL_TYPE.GRYO, handleGyro))
 
 
-var server = slab.startServer(handlers, fs.readFileSync('ui.html').toString(), {port: 3000})
+var server = slab.startServer(handlers, fs.readFileSync('ui.html').toString(), {port: 3545})
 
 console.log("Started running on address " + server.ip+":"+server.port);
