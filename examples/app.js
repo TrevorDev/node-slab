@@ -35,8 +35,27 @@ var handleCompass = function (e){
 	//console.log(e)
 }
 
+var lastGyroVal = null;
 var handleGyro = function (e){
-	console.log(Math.floor(e.val.alpha/20))
+	var newVal = Math.floor(e.val.alpha/20);
+	console.log(newVal)
+	if(!lastGyroVal){
+		lastGyroVal = newVal;
+	}else{
+		var command = "xdotool key Alt_L+Control_L+"
+		if(newVal < lastGyroVal){
+			command+="Left"
+		}else if(newVal > lastGyroVal){
+			command+="Right"
+		}else{
+			return;
+		}
+		console.log(command)
+		lastGyroVal = newVal;
+		exec(command, function (error, stdout, stderr) {});	
+	}
+	
+
 }
 
 handlers.push(slab.createHandler("volume", slab.CONTROL_TYPE.RANGE, handleVol))
